@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+/*
+    GENERAL STYLES
+*/
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-size: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    padding: 3rem 2rem;
+
+    background: #fff;
+    border: 2rem solid #2C3E50;
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    text-decoration: underline;
+}
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+}
+h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #333;
+}
+
+#site-container {
+    margin: 0 auto;
+    width: 75%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img-rounded {
+    border-radius: 100%;
+    box-shadow: 0 0 100px 0 rgba(128, 128, 128, 0.1);
+}
+
+/*
+    HEADER
+*/
+
+#header-img {
+    max-width: 50%;
+    width: 200px;
+}
+
+header h1 {
+    margin-bottom: 0;
+}
+
+/*
+    BUTTON LIST
+*/
+
+.btn-list {
+    list-style-type: none;
+    margin: 2rem 0 0 0;
+    padding: 0;
+    line-height: 3rem;
+}
+
+.btn-link {
+    float: left;
+    margin: 1rem;
+}
+
+.btn-link a {
+    font-size: 1rem;
+    padding: 1rem;
+    border: 0.25rem solid #e03423;
+    color: #e03423;
+    text-decoration: none;
+    box-shadow: inset 0 0 0 0 #e03423;
+    transition: box-shadow ease-in-out 500ms;
+}
+
+.btn-link a:hover, .btn-link a:active, .btn-link a:focus {
+    outline: 0;
+    box-shadow: inset 0 0 0 0.25rem #e03423;
+    transition: box-shadow ease-out 250ms;
+}
+
+
+/*
+    MEDIA QUERIES
+*/
+
+
+
+@media only screen and (max-width: 1280px) {
+    #site-container {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    body {
+        border-width: 1.5rem;
+        padding: 2rem 1rem;
+    }
+
+    #site-container {
+        width: 100%;
+    }
+
+    #header-img {
+        max-width: 100%;
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    body {
+        padding: 1rem;
+    }
+
+    #header-img {
+        max-width: 100%;
+        width: 150px;
+    }
+}
