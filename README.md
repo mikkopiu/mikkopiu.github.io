@@ -1,5 +1,5 @@
-# My personal website (old)
+# My personal website
 
-This is a copy of my old (but still current) website at http://mikkopiuhola.org
+This repo hosts my personal portfolio/website, currently in a placeholder state.
 
 To be redone at some point
