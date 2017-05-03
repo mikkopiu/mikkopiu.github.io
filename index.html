@@ -43,11 +43,24 @@
         </main>
     </div>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="main.min.css">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+    <noscript id="deferred-styles">
+        <link rel="stylesheet" type="text/css" href="main.min.css" />
+    </noscript>
+
+    <script>
+        var loadDeferredStyles = function() {
+          var addStylesNode = document.getElementById("deferred-styles");
+          var replacement = document.createElement("div");
+          document.body.appendChild(replacement)
+          addStylesNode.parentElement.removeChild(addStylesNode);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+        else window.addEventListener('load', loadDeferredStyles);
+    </script>
 
     <!-- Google Analytics -->
     <script>
