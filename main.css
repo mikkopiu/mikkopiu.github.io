@@ -1,62 +1,138 @@
-@charset "UTF-8";
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: optional;
+    src: url("fonts/montserrat_5.2.8_latin-wght-normal.woff2") format("woff2");
+}
 
-/*
-    HTML5 CSS RESETS
- */
+/* Base layout: all styles load together, before the first styled paint. */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
 
 html {
+    overflow: hidden;
+    font-size: 100%;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
     line-height: 1.15;
-    -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
 
-main, header {
-    display: block;
+html,
+body {
+    height: 100%;
+    width: 100%;
 }
 
-.btn-link {
-    background-color: transparent;
-    -webkit-text-decoration-skip: objects;
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    padding: 3rem 2rem;
+    background: #fff;
+    border: 2rem solid #2c3e50;
+    color: #222;
 }
 
-/*
-    GENERAL STYLES
-*/
+h1 {
+    font-size: 3rem;
+    text-decoration: underline;
+}
 
-html {
-    font-family: 'Montserrat', sans-serif;
+h1,
+h2 {
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h2,
+h3 {
+    color: #333;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+#site-container {
+    margin: 0 auto;
+    width: 75%;
+}
+
+.site-section {
+    text-align: center;
 }
 
 .img-rounded {
+    border-radius: 100%;
+    border: none;
     box-shadow: 0 0 100px 0 rgba(128, 128, 128, 0.1);
 }
 
-/*
-    BUTTON LIST
-*/
+#header-img {
+    max-width: 50%;
+    width: 200px;
+    height: auto;
+    aspect-ratio: 1;
+}
+
+header h1 {
+    margin-bottom: 0;
+}
+
+/* Navigation */
+.btn-list {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    line-height: 4rem;
+    display: inline-block;
+}
+
+.btn-link-item {
+    float: left;
+    margin: 1rem;
+}
 
 .btn-link {
+    font-size: 1rem;
+    padding: 1rem;
+    border: 0.25rem solid #e03423;
+    background: transparent;
+    color: #e03423;
+    text-decoration: none;
+    box-shadow: inset 0 0 0 0 #e03423;
     transition: box-shadow ease-in-out 500ms;
 }
 
-.btn-link:hover, .btn-link:active, .btn-link:focus {
-    outline: 0;
+.btn-link:hover,
+.btn-link:active,
+.btn-link:focus {
     box-shadow: inset 0 0 0 0.25rem #e03423;
-    transition: box-shadow ease-out 250ms;
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
 }
 
+.btn-link:focus-visible {
+    outline: 2px solid #2c3e50;
+    outline-offset: 4px;
+}
 
-/*
-    MEDIA QUERIES
-*/
-
-@media only screen and (max-width: 1280px) {
+/* Responsive layout */
+@media (max-width: 1280px) {
     #site-container {
         width: 90%;
     }
 }
 
-@media only screen and (max-width: 640px) {
+@media (max-width: 640px) {
     body {
         border-width: 1.5rem;
         padding: 2rem 1rem;
@@ -72,13 +148,13 @@ html {
     }
 }
 
-@media only screen and (max-width: 320px) {
+@media (max-width: 320px) {
     html {
         font-size: 75%;
     }
 }
 
-@media only screen and (max-height: 480px) {
+@media (max-height: 480px) {
     body {
         padding: 1rem;
     }
@@ -86,5 +162,11 @@ html {
     #header-img {
         max-width: 100%;
         width: 150px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-link {
+        transition: none;
     }
 }
